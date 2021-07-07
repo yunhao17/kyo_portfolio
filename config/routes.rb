@@ -9,11 +9,22 @@ Rails.application.routes.draw do
   :registrations => 'users/registrations',
   }
   
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'public/users#top'
+  get 'about' =>'public/users#about'
   
   namespace :admin do
     resources :areas
     resources :purposes
     resources :spots
   end
+  
+  namespace :user do
+    resources :users
+    resources :favorites, only:[:create, :destroy]
+    resources :spot_comments, only:[:create, :destroy]
+    resources :areas, only:[:index, :show]
+    resources :purposes, only:[:index]
+    resources :spots, only:[:index, :show]
+  end
+  
 end
