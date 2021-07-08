@@ -1,0 +1,30 @@
+<h1>目的一覧</h1>
+<%= form_with model: @purpose,url: admin_purposes_path(@purpose), local:true do |f| %>
+<div>
+  <%#= f.label :area_id, "エリア" %>
+  <%#= f.collection_select :area_id, @areas, :id, :name, prompt: "選択して下さい" %>
+</div>
+<div>
+  <%= f.label :name, "目的名" %>
+  <%= f.text_field :name %>
+  <%= f.submit "追加" %>
+</div>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <!--<th>エリア名</th>-->
+      <th>目的名</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @purposes.each do |purpose| %>
+    <tr>
+      <th><%#= purpose.area.name %></th>
+      <th><%= purpose.name %></th>
+      <th><%= link_to "削除",admin_purpose_path(purpose.id), method: :delete %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

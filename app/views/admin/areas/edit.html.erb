@@ -1,5 +1,5 @@
 <h1>エリア編集</h1>
-<%= form_with model: @area, url: admin_areas_path(@area), local:true do |f| %>
+<%= form_with model: @area, url: admin_area_path, local:true do |f| %>
 <div>
   <%= f.label :image_id, "エリア画像" %>
   <%= f.attachment_field :image %>

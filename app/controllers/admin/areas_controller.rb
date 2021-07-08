@@ -15,9 +15,15 @@ class Admin::AreasController < ApplicationController
     @area.save
     redirect_to admin_areas_path
   end
-  
+
   def edit
     @area = Area.find(params[:id])
+  end
+
+  def update
+    @area = Area.find(params[:id])
+    @area.update(area_params)
+    redirect_to admin_areas_path
   end
 
   def destroy

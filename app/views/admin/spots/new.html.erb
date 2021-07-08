@@ -1,0 +1,29 @@
+<h1>スポット追加</h1>
+<%= form_with model: @spot, url: admin_spots_path(@spot), local:true do |f| %>
+ <div>
+  <%= f.label :area_id, "エリア" %>
+  <%= f.collection_select :area_id, @areas, :id, :name, prompt: "選択して下さい" %>
+ </div>
+ <div>
+  <%= f.label :purpose_id, "目的" %>
+  <%= f.collection_select :purpose_id, @purposes, :id, :name, prompt: "選択して下さい" %>
+ </div>
+ <div>
+  <%= f.label :image_id, "スポット画像" %>
+  <%= f.attachment_field :image %>
+ </div>
+ <div>
+  <%= f.label :name, "スポット名" %>
+  <%= f.text_field :name %>
+ </div>
+ <div>
+  <%= f.label :description, "スポット説明" %>
+  <%= f.text_area :description %>
+ </div>
+ <div>
+  <%= f.submit "登録" %>
+ </div>
+<% end %>
+ <div>
+  <%= link_to '戻る',admin_spots_path %>
+ </div>
