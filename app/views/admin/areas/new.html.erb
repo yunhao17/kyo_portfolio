@@ -1,0 +1,21 @@
+<h1>エリア追加</h1>
+<%= form_with model: @area, url: admin_areas_path(@area), local:true do |f| %>
+<div>
+  <%= f.label :image_id, "エリア画像" %>
+  <%= f.attachment_field :image %>
+</div>
+<div>
+  <%= f.label :name, "エリア名" %>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label :description, "エリア説明" %>
+  <%= f.text_area :description %>
+</div>
+<div>
+  <%= f.submit "登録" %>
+</div>
+<% end %>
+<div>
+  <%= link_to '戻る',admin_areas_path %>
+</div>

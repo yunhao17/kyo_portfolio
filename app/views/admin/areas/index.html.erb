@@ -1,0 +1,24 @@
+<h1>エリア一覧</h1>
+<h2><%= link_to "追加",new_admin_area_path %></th></h2>
+<table>
+  <thead>
+    <tr>
+      <th>エリア画像</th>
+      <th>エリア名</th>
+      <th>エリア説明</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @areas.each do |area| %>
+    <tr>
+      <th><%= attachment_image_tag area, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
+      <th><%= area.name %></th>
+      <th><%= area.description %></th>
+      <th><%= link_to "編集",edit_admin_area_path(area.id) %></th>
+      <th><%= link_to "削除",admin_area_path(area.id), method: :delete %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
