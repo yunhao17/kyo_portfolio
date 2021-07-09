@@ -2,6 +2,16 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
+  
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.select :age ,[["10代", "10代"], ["20代", "20代"], ["30代", "30代"], ["40代", "40代"], ["50代以上", "50代以上"]], include_blank: "選択して下さい" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />

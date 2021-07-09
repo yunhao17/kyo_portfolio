@@ -1,11 +1,15 @@
 <header>
   <a href="/">ホーム</a>
 <% if user_signed_in? %>
-  <li><%= link_to "マイページ",users_path(current_user) %></li>
+  <li><%= link_to "マイページ",user_user_path(current_user) %></li>
+  <li><%= link_to "エリアで探す",user_areas_path %></li>
+  <Li><%= link_to "目的で探す",user_purposes_path %></Li>
+  <li><%= link_to "ログアウト",destroy_user_session_path , method: :delete %></li>
 <% elsif admin_signed_in? %>
   <li><%= link_to "エリア一覧",admin_areas_path %></li>
   <li><%= link_to "目的一覧",admin_purposes_path %></li>
   <li><%= link_to "スポット一覧",admin_spots_path %></li>
+  <li><%= link_to "ログアウト",destroy_admin_session_path , method: :delete %></li>
 <% else %>
   <li><%= link_to "About",about_path%></li>
 <% end %>
