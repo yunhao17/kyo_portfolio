@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :areas
     resources :purposes
-    resources :spots
+    resources :spots, only: [:new, :create, :index, :show, :destroy]
   end
   
   namespace :user do

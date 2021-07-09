@@ -15,8 +15,8 @@
   <tbody>
     <% @spots.each do |spot| %>
     <tr>
-      <th><%#= spot.area.name %></th>
-      <th><%#= spot.purpose.name %></th>
+      <th><%= spot.area.name %></th>
+      <th><%= spot.purpose.name %></th>
       <th><%= attachment_image_tag spot, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
       <th><%= spot.name %></th>
       <th><%= spot.description %></th>

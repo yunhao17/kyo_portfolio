@@ -15,6 +15,8 @@ class Admin::SpotsController < ApplicationController
   end
 
   def create
+    @areas = Area.all
+    @purposes = Purpose.all
     @spot = Spot.new(spot_params)
     @spot.save
     redirect_to admin_spots_path
