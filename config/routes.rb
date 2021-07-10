@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :spots, only: [:new, :create, :index, :show, :destroy]
   end
   
-  namespace :user do
+  scope module: :public do
     resources :users
     resources :favorites, only:[:create, :destroy]
     resources :spot_comments, only:[:create, :destroy]
@@ -26,5 +26,4 @@ Rails.application.routes.draw do
     resources :purposes, only:[:index]
     resources :spots, only:[:index, :show]
   end
-  
 end
