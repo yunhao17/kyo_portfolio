@@ -1,0 +1,18 @@
+<h1>ユーザー一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>年代</th>
+      <th>名前</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <th><%= user.age %></th>
+      <th><%= user.name %></th>
+      <th><%= link_to "編集",edit_user_path(user.id) %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
