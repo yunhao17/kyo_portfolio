@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins, :controllers => {
   :sessions => 'admins/sessions'
   }
-  
+
   devise_for :users, :controllers => {
   :sessions => 'users/sessions',
   :registrations => 'users/registrations',
   }
-  
+
   root to: 'public/users#top'
   get 'about' =>'public/users#about'
-  
+
   namespace :admin do
     resources :areas
     resources :purposes
-    resources :spots, only: [:new, :create, :index, :show, :destroy]
+    resources :spots, only: [:new, :create, :index, :show, :destroy, :edit]
   end
-  
+
   scope module: :public do
     resources :users
     resources :favorites, only:[:create, :destroy]

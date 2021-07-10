@@ -1,7 +1,7 @@
 class Spot < ApplicationRecord
   
-  belongs_to :areas
-  belongs_to :purposes
+  belongs_to :area
+  belongs_to :purpose
 
   attachment :image
 end
