@@ -9,7 +9,11 @@
   <tbody>
     <% @purposes.each do |purpose| %>
     <tr>
-      <th><%= purpose.name %></th>
+      <th>
+        <%= link_to mokuteki_index_spot_path(purpose.id) do %>
+        <%= purpose.name %>
+        <% end %>
+      </th>
     </tr>
     <% end %>
   </tbody>

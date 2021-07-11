@@ -22,8 +22,13 @@ Rails.application.routes.draw do
     resources :users
     resources :favorites, only:[:create, :destroy]
     resources :spot_comments, only:[:create, :destroy]
-    resources :areas, only:[:index, :show]
-    resources :purposes, only:[:index]
-    resources :spots, only:[:index, :show]
+    resources :areas
+    resources :purposes
+    resources :spots, only:[:index, :show] do
+      member do
+        get :mokuteki_index
+      end
+    end
+    get '/spots/:area_id/eria_index/:purpose_id', to: 'spots#eria_index', as: 'eria_purpose'
   end
 end

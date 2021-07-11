@@ -14,7 +14,7 @@
     <% @purposes.each do |purpose| %>
     <tr>
       <th>
-        <%= link_to purposes_path do %>
+        <%= link_to eria_purpose_path(@area.id, purpose.id) do %>
         <%= purpose.name %>
         <% end %>
         </th>
