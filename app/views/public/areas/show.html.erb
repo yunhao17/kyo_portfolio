@@ -1,0 +1,24 @@
+<h2>エリア詳細</h2>
+<%= attachment_image_tag @area, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
+<%= @area.name %>
+<%= @area.description %>
+<h2>目的</h2>
+<table>
+  <thead>
+    <tr>
+      <th>目的名</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @purposes.each do |purpose| %>
+    <tr>
+      <th>
+        <%= link_to purposes_path do %>
+        <%= purpose.name %>
+        <% end %>
+        </th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

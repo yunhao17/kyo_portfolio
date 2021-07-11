@@ -1,0 +1,16 @@
+<h1>目的一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>目的名</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @purposes.each do |purpose| %>
+    <tr>
+      <th><%= purpose.name %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

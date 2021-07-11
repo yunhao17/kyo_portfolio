@@ -21,7 +21,6 @@ class Admin::PurposesController < ApplicationController
 
   private
 
-
   def purpose_params
     params.require(:purpose).permit(:name)
   end
