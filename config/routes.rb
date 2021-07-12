@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :areas
     resources :purposes
-    resources :spots, only: [:new, :create, :index, :show, :destroy, :edit]
+    resources :spots
   end
 
   scope module: :public do

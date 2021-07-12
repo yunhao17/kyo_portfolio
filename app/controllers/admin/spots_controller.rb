@@ -23,10 +23,14 @@ class Admin::SpotsController < ApplicationController
   end
 
   def edit
+    @areas = Area.all
+    @purposes = Purpose.all
     @spot = Spot.find(params[:id])
   end
 
   def update
+    @areas = Area.all
+    @purposes = Purpose.all
     @spot = Spot.find(params[:id])
     @spot.update(spot_params)
     redirect_to admin_spots_path
