@@ -3,7 +3,7 @@ class Public::SpotsController < ApplicationController
   def index
     @spots = Spot.all
   end
- 
+
   def eria_index
     @spots = Spot.where(area_id: params[:area_id] ,purpose_id: params[:purpose_id])
     render :index
@@ -17,6 +17,7 @@ class Public::SpotsController < ApplicationController
 
   def show
    @spot = Spot.find(params[:id])
+   @spot_comment = SpotComment.new
   end
 
 

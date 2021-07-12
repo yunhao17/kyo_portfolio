@@ -7,6 +7,7 @@
       <th>スポット画像</th>
       <th>スポット名</th>
       <th>スポット説明</th>
+      <th>コメント件数</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@
         <% end %>
       </th>
       <th><%= spot.description %></th>
+      <th><%= spot.spot_comments.count %></th>
     </tr>
     <% end %>
   </tbody>

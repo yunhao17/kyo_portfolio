@@ -1,3 +1,22 @@
 <h2>スポット詳細</h2>
 <%= @spot.name %>
 <%= @spot.description %>
+<h2>コメント一覧</h2>
+<p>コメント件数：<%= @spot.spot_comments.count %></p>
+<% @spot.spot_comments.each do |spot_comment| %>
+  <%= spot_comment.user.age %>
+  <%= spot_comment.user.name %>
+  <%= spot_comment.created_at.strftime('%Y/%m/%d') %>
+  <%= spot_comment.comment %>
+  <% if spot_comment.user == current_user %>
+  <div>
+    <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete %>
+  </div>
+  <% end %>
+<% end %>
+<div class="new-comment">
+<%= form_with(model:[@spot, @spot_comment], local: true) do |f| %>
+  <%= f.text_area :comment, placeholder: "コメントをここに" %>
+  <%= f.submit "送信する" %>
+<% end %>
+</div>

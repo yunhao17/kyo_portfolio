@@ -21,10 +21,10 @@ Rails.application.routes.draw do
   scope module: :public do
     resources :users
     resources :favorites, only:[:create, :destroy]
-    resources :spot_comments, only:[:create, :destroy]
     resources :areas
     resources :purposes
     resources :spots, only:[:index, :show] do
+      resources :spot_comments, only: [:create, :destroy]
       member do
         get :mokuteki_index
       end
