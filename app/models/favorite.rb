@@ -1,5 +1,5 @@
 class Favorite < ApplicationRecord
 
-  belongs_to :users
-  belongs_to :spots
+  belongs_to :user
+  belongs_to :spot
 end
