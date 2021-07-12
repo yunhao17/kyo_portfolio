@@ -6,6 +6,7 @@ class Spot < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+  has_many :favorited_users, through: :favorites, source: :user
   
   belongs_to :area
   belongs_to :purpose

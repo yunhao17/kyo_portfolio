@@ -14,6 +14,7 @@ class Public::SpotsController < ApplicationController
     render :index
   end
 
+# 　sort {|a,b| b.favorited_users.count <=> a.favorited_users.count}
 
   def show
    @spot = Spot.find(params[:id])
