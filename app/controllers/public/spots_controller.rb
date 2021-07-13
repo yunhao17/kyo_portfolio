@@ -4,13 +4,14 @@ class Public::SpotsController < ApplicationController
     @spots = Spot.all
   end
 
-  def eria_index
+  def eria_mokuteki
     @spots = Spot.where(area_id: params[:area_id] ,purpose_id: params[:purpose_id])
     render :index
   end
 
-  def mokuteki_index
-    @spots = Spot.where(purpose_id: params[:id])
+  def mokuteki
+    @spots = Spot.where(purpose_id: params[:purpose_id])
+    render :index
   end
 
 # 　sort {|a,b| b.favorited_users.count <=> a.favorited_users.count}

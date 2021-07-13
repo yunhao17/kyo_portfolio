@@ -10,7 +10,7 @@
     <% @purposes.each do |purpose| %>
     <tr>
       <th>
-        <%= link_to mokuteki_index_spot_path(purpose.id) do %>
+        <%= link_to mokuteki_path(purpose.id) do %>
         <%= purpose.name %>
         <% end %>
       </th>
