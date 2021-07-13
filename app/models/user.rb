@@ -7,6 +7,5 @@ class User < ApplicationRecord
   has_many :spots, dependent: :destroy
   has_many :spot_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  # おすすめ順表示
   has_many :favorited_spots, through: :favorites, source: :spot
 end

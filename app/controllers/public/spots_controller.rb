@@ -11,7 +11,6 @@ class Public::SpotsController < ApplicationController
 
   def mokuteki_index
     @spots = Spot.where(purpose_id: params[:id])
-    render :index
   end
 
 # 　sort {|a,b| b.favorited_users.count <=> a.favorited_users.count}
