@@ -1,3 +1,14 @@
+<%
+  if controller.action_name == "index"
+    url = spots_path(:sort => "favo")
+  elsif controller.action_name == "eria_mokuteki"
+    url = eria_purpose_path(:sort => "favo")
+  elsif controller.action_name == "mokuteki"
+    url = mokuteki_path(:sort => "favo")
+  end
+%>
+
+<%= link_to "いいね順に並び替え", url %>
 <h1>スポット一覧</h1>
 <table>
   <thead>

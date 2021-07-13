@@ -1,20 +1,31 @@
 class Public::SpotsController < ApplicationController
 
   def index
-    @spots = Spot.all
+    if params[:sort] == "favo"
+      # n + 1 問題が発生しているので可能であれば改善してみる
+      @spots = Spot.all.sort{|a,b| b.favorited_users.count <=> a.favorited_users.count}
+    else 
+      @spots = Spot.all
+    end
   end
 
   def eria_mokuteki
-    @spots = Spot.where(area_id: params[:area_id] ,purpose_id: params[:purpose_id])
+    if params[:sort] == "favo"
+      @spots = Spot.where(area_id: params[:area_id] ,purpose_id: params[:purpose_id]).sort{|a,b| b.favorited_users.count <=> a.favorited_users.count}
+    else
+      @spots = Spot.where(area_id: params[:area_id] ,purpose_id: params[:purpose_id])
+    end
     render :index
   end
 
   def mokuteki
-    @spots = Spot.where(purpose_id: params[:purpose_id])
+    if params[:sort] == "favo"
+      @spots = Spot.where(purpose_id: params[:purpose_id]).sort{|a,b| b.favorited_users.count <=> a.favorited_users.count}
+    else
+      @spots = Spot.where(purpose_id: params[:purpose_id])
+    end
     render :index
   end
-
-# 　sort {|a,b| b.favorited_users.count <=> a.favorited_users.count}
 
   def show
    @spot = Spot.find(params[:id])
