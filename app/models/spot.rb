@@ -10,7 +10,7 @@ class Spot < ApplicationRecord
   
   belongs_to :area
   belongs_to :purpose
-  belongs_to :user
+  belongs_to :user,optional: true
 
   attachment :image
 end
