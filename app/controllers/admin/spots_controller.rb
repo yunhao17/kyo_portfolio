@@ -3,7 +3,7 @@ class Admin::SpotsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @spots = Spot.all
+    @spots = Spot.all.page(params[:page]).per(8)
     @areas = Area.all
     @purposes = Purpose.all
   end
