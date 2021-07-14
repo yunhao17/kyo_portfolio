@@ -20,6 +20,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: “bi”;
+  src: url('/assets/001Shirokuma-Regular') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
  html{
  height: 100%;
  }
@@ -66,4 +73,18 @@ body{
   position: relative;
   min-height: 100%;
   background-image: url(/assets/back.jpeg);
+}
+.top{
+  text-align: center;
+  margin-top: 80px;
+  font-family: “bi”;
+  font-size: 50px
+}
+
+.about{
+text-align:center;
+}
+.about>h2{
+display:inline-block;
+border:1px solid #999;
 }

@@ -1,3 +1,9 @@
-<h1>京へようこそ</h1>
-<h2><%= link_to "ログイン",new_user_session_path %></h2>
-<h2><%= link_to "新規登録",new_user_registration_path %></h2>
+<div class="top"><h1>京へようこそ</h1></div>
+<div class="about">
+ <h2><%= link_to "ログイン",new_user_session_path %></h2>
+ <h2><%= link_to "新規登録",new_user_registration_path %></h2>
+</div>
+<p>
+   新規登録の方は
+   <%= link_to "こちら",new_user_registration_path %>
+</p>
