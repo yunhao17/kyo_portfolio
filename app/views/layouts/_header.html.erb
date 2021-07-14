@@ -1,17 +1,22 @@
 <header>
-  <a href="/">ホーム</a>
+ <nav>
+  <ul class="nav">
+   <li class="nav-list"><a href="/">ホーム</a></li>
 <% if user_signed_in? %>
-  <li><%= link_to "マイページ",user_path(current_user) %></li>
-  <li><%= link_to "エリアで探す",areas_path %></li>
-  <li><%= link_to "目的で探す",purposes_path %></li>
-  <li><%= link_to "ユーザー一覧",users_path %></li>
-  <li><%= link_to "ログアウト",destroy_user_session_path , method: :delete %></li>
+   <li class="nav-list"><%= link_to "マイページ",user_path(current_user) %></li>
+   <li class="nav-list"><%= link_to "エリアで探す",areas_path %></li>
+   <li class="nav-list"><%= link_to "目的で探す",purposes_path %></li>
+   <li class="nav-list"><%= link_to "ユーザー一覧",users_path %></li>
+   <li class="nav-list"><%= link_to "ログアウト",destroy_user_session_path , method: :delete %></li>
 <% elsif admin_signed_in? %>
-  <li><%= link_to "エリア一覧",admin_areas_path %></li>
-  <li><%= link_to "目的一覧",admin_purposes_path %></li>
-  <li><%= link_to "スポット一覧",admin_spots_path %></li>
-  <li><%= link_to "ログアウト",destroy_admin_session_path , method: :delete %></li>
+   <li class="nav-list"><%= link_to "エリア一覧",admin_areas_path %></li>
+   <li class="nav-list"><%= link_to "目的一覧",admin_purposes_path %></li>
+   <li class="nav-list"><%= link_to "スポット一覧",admin_spots_path %></li>
+   <li class="nav-list"><%= link_to "ログアウト",destroy_admin_session_path , method: :delete %></li>
 <% else %>
-  <li><%= link_to "About",about_path%></li>
+   <!--<a href="/">ホーム</a>-->
+   <!--<li class="nav-list"><%#= link_to "About",about_path%></li>-->
 <% end %>
+  </ul>
+ </nav>
 </header>

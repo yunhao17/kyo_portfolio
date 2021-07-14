@@ -40,5 +40,6 @@ https://docs.google.com/spreadsheets/d/1FzGrir6nq1U9pgIYlrOq72778-150uIsmgxTYRug
 - IDE：Cloud9
 
 ## 使用素材
-
+ - https://sozai-good.com/
+ - https://fontfree.me/
 使用した場合記述します。
