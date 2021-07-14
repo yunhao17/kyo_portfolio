@@ -78,13 +78,18 @@ body{
   text-align: center;
   margin-top: 80px;
   font-family: “bi”;
-  font-size: 50px
+  font-size: 50px;
+  color: red;
 }
 
 .about{
-text-align:center;
+  font-family: “bi”;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  margin: 50px 50px
 }
-.about>h2{
-display:inline-block;
-border:1px solid #999;
+
+.about-a {
+  margin: 50px 50px
 }
