@@ -1,19 +1,20 @@
 class Public::UsersController < ApplicationController
-  
+
   def top
   end
-  
+
   def about
   end
-  
+
   def index
     @users = User.all
   end
-  
+
   def show
     @user = User.find(params[:id])
+    @spot_comments = @user.spot_comments
   end
-  
+
   def edit
     @user = User.find(params[:id])
     if @user == current_user
@@ -22,13 +23,13 @@ class Public::UsersController < ApplicationController
       redirect_to user_path(current_user.id)
     end
   end
-  
+
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user.id)
   end
-  
+
   private
 
   def user_params

@@ -1,6 +1,6 @@
 <h2>User info</h2>
 <table>
- <tbody>   
+ <tbody>
   <tr>
     <th>年代</th>
     <th><%= @user.age %></th>
@@ -11,3 +11,23 @@
   </tr>
  </tbody>
 </table>
+<h2>コメント一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>スポット名</th>
+      <th>コメント</th>
+    </tr>
+  </thead>
+  <% @spot_comments.each do |spot_comment| %>
+  <tbody>
+    <tr>
+      <td>
+        <%= link_to spot_path(spot_comment.spot.id) do %>
+        <%= spot_comment.spot.name %>
+        <% end %>
+      </td>
+        <td><%= spot_comment.comment %></td>
+      </tr>
+  </tbody>
+  <% end %>
