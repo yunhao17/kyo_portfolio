@@ -28,7 +28,7 @@ class Public::SpotsController < ApplicationController
   end
 
   def show
-   @spot = Spot.find(params[:id]).page(params[:page]).per(8)
+   @spot = Spot.find(params[:id])
    @spot_comment = SpotComment.new
   end
 
