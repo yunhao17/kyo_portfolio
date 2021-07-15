@@ -16,7 +16,7 @@
 <% end %>
 <h2>コメント一覧</h2>
 <p>コメント件数：<%= @spot.spot_comments.count %></p>
-<% @spot.spot_comments.each do |spot_comment| %>
+<% @spot_comments.each do |spot_comment| %>
   <%= spot_comment.user.age %>
   <%= spot_comment.user.name %>
   <%= spot_comment.created_at.strftime('%Y/%m/%d') %>
@@ -27,6 +27,7 @@
   </div>
   <% end %>
 <% end %>
+<%= paginate @spot_comments %>
 <div class="new-comment">
 <%= form_with(model:[@spot, @spot_comment], local: true) do |f| %>
   <%= f.text_area :comment, placeholder: "コメントをここに" %>

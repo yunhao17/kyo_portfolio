@@ -12,7 +12,7 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @spot_comments = @user.spot_comments.page(params[:page]).per(8)
+    @spot_comments = @user.spot_comments.page(params[:page]).per(5)
   end
 
   def edit

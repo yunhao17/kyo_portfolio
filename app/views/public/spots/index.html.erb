@@ -37,5 +37,6 @@
       <th><%= spot.spot_comments.count %></th>
     </tr>
     <% end %>
+    <%= paginate @spots %>
   </tbody>
 </table>

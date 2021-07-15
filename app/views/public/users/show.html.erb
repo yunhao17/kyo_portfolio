@@ -1,41 +1,41 @@
 <div class="container px-5 px-sm-0">
- <div calss="row">
-  <div class="col-lg-3">
-   <h2>User info</h2>
-    <table>
-     <tbody>
-      <tr>
-       <th>年代</th>
-       <th><%= @user.age %></th>
-       </tr>
-      <tr>
-       <th>名前</th>
-       <th><%= @user.name %></th>
-      </tr>
-      </tbody>
-    </table>
+  <div calss="row">
+    <div class="col-lg-3">
+      <h2>User info</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>年代</th>
+            <th><%= @user.age %></th>
+          </tr>
+          <tr>
+            <th>名前</th>
+            <th><%= @user.name %></th>
+           </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-8 offset-md-1">
+      <h2>コメント一覧</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>スポット名</th>
+            <th>コメント</th>
+          </tr>
+        </thead>
+        <% @spot_comments.each do |spot_comment| %>
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to spot_path(spot_comment.spot.id) do %>
+              <%= spot_comment.spot.name %>
+              <% end %>
+            <td><%= spot_comment.comment %></td>
+          </tr>
+        </tbody>
+        <% end %>
+        <%= paginate @spot_comments %>
+    </div>
   </div>
-  <div class="col-lg-8 offset-md-1">
-   <h2>コメント一覧</h2>
-   <table class="table">
-    <thead>
-     <tr>
-      <th>スポット名</th>
-      <th>コメント</th>
-     </tr>
-     </thead>
-  <% @spot_comments.each do |spot_comment| %>
-    <tbody>
-     <tr>
-      <td>
-       <%= link_to spot_path(spot_comment.spot.id) do %>
-       <%= spot_comment.spot.name %>
-       <% end %>
-      </td>
-      <td><%= spot_comment.comment %></td>
-      </tr>
-    </tbody>
-  <% end %>
-  </div>
- </div>
 </div>
