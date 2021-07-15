@@ -1,20 +1,23 @@
-<h1>目的一覧</h1>
-<table>
-  <thead>
-    <tr>
-      <th>目的名</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @purposes.each do |purpose| %>
-    <tr>
-      <th>
-        <%= link_to mokuteki_path(purpose.id) do %>
-        <%= purpose.name %>
-        <% end %>
-      </th>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1 class="text-center">目的一覧</h1>
+<div class="album">
+  <div class="container">
+    <div class="row">
+      <% @purposes.each do |purpose| %>
+      <div class="col-md-4">
+        <div class="card md-4">
+          <div class="card-imag-top text-center">
+            <%#= attachment_image_tag purpose, :image, fallback: "no_image.jpg", size: '200x150' %>
+          </div>
+          <div class="card-body">
+            <p class="text-center">
+              <%= link_to mokuteki_path(purpose.id) do %>
+              <%= purpose.name %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
