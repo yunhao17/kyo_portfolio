@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
 /*フォント*/
 @font-face {
   font-family: “ai”;
@@ -29,15 +29,15 @@
 }
 
 /*基本*/
- html{
- height: 100%;
- }
+html{
+height: 100%;
+}
 
- * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
- }
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
 
 /*ヘッダー*/
 header {
@@ -50,7 +50,7 @@ header {
   text-align: center;
   padding: 10px 0;
   margin: 0 auto;
- }
+}
 
 .nav-list {
   font-family: “ai”;
@@ -61,22 +61,22 @@ header {
  }
 
 /*フッター*/
-footer {
-	height: 75px;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	text-align: center;
-}
-.footer {
-  line-height:75px;
-}
+// footer {
+// 	height: 75px;
+// 	width: 100%;
+// 	position: absolute;
+// 	bottom: 0;
+// 	text-align: center;
+// }
+// .footer {
+//   line-height:75px;
+// }
 
 /*メイン*/
 body{
-  width: 100%;
-  position: relative;
-  min-height: 100%;
+  // width: 100%;
+  // position: relative;
+  // min-height: 100%;
   background-image: url(/assets/back.jpeg);
 }
 
@@ -85,8 +85,6 @@ body{
   text-align: center;
   margin-top: 80px;
   font-family: “bi”;
-  font-size: 50px;
-  color: red;
 }
 
 .about{
@@ -100,3 +98,12 @@ body{
 .about-a {
   margin: 50px 50px
 }
+
+.link {
+  text-decoration: none;
+}
+
+
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';

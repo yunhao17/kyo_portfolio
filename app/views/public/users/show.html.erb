@@ -1,33 +1,41 @@
-<h2>User info</h2>
-<table>
- <tbody>
-  <tr>
-    <th>年代</th>
-    <th><%= @user.age %></th>
-  </tr>
-  <tr>
-    <th>名前</th>
-    <th><%= @user.name %></th>
-  </tr>
- </tbody>
-</table>
-<h2>コメント一覧</h2>
-<table>
-  <thead>
-    <tr>
+<div class="container">
+ <div calss="row">
+  <div class="col-md-3">
+   <h2>User info</h2>
+    <table>
+     <tbody>
+      <tr>
+       <th>年代</th>
+       <th><%= @user.age %></th>
+       </tr>
+      <tr>
+       <th>名前</th>
+       <th><%= @user.name %></th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-8 ">
+   <h2>コメント一覧</h2>
+   <table>
+    <thead>
+     <tr>
       <th>スポット名</th>
       <th>コメント</th>
-    </tr>
-  </thead>
+     </tr>
+     </thead>
   <% @spot_comments.each do |spot_comment| %>
-  <tbody>
-    <tr>
+    <tbody>
+     <tr>
       <td>
-        <%= link_to spot_path(spot_comment.spot.id) do %>
-        <%= spot_comment.spot.name %>
-        <% end %>
+       <%= link_to spot_path(spot_comment.spot.id) do %>
+       <%= spot_comment.spot.name %>
+       <% end %>
       </td>
-        <td><%= spot_comment.comment %></td>
+      <td><%= spot_comment.comment %></td>
       </tr>
-  </tbody>
+    </tbody>
   <% end %>
+  </div>
+ </div>
+</div>
