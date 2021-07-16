@@ -30,7 +30,7 @@ class Public::SpotsController < ApplicationController
   def show
    @spot = Spot.find(params[:id])
    @spot_comment = SpotComment.new
-   @spot_comments = @spot.spot_comments.page(params[:page]).per(10)
+   @spot_comments = @spot.spot_comments.page(params[:page]).per(5)
   end
 
 

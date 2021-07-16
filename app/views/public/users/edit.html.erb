@@ -1,16 +1,21 @@
-<h1>ユーザー編集</h1>
-<%= form_with model:@user, local:true do |f| %>
-<div class="field">
-  <%= f.label :age %><br />
-  <%= f.select :age ,[["10代", "10代"], ["20代", "20代"], ["30代", "30代"], ["40代", "40代"], ["50代以上", "50代以上"]], include_blank: "選択して下さい" %>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3>ユーザー編集</h3>
+      <%= form_with model:@user, local:true do |f| %>
+      <div class="field form-group col-xs-12">
+        <%= f.label :age %><br />
+        <%= f.select :age ,[["10代", "10代"], ["20代", "20代"], ["30代", "30代"], ["40代", "40代"], ["50代以上", "50代以上"]], include_blank: "選択して下さい" %>
+      </div>
+      <div class="field form-group col-xs-12">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+      <div class="field form-group col-xs-12">
+      <%= f.submit "更新" %>
+      </div>
+      <div class="field form-group col-xs-12">
+        <%= link_to '戻る',users_path %>
+      </div>
+      <% end %>
+  </div>
 </div>
-  <%= f.label :name %><br />
-  <%= f.text_field :name, autofocus: true %>
-</div>
-<div>
-  <%= f.submit "更新" %>
-</div>
-<div>
-  <%= link_to '戻る',users_path %>
-</div>
-<% end %>

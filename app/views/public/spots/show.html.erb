@@ -1,36 +1,69 @@
-<h2>スポット詳細</h2>
-<%= @spot.name %>
-<%= @spot.description %>
-<% if @spot.favorited_by?(current_user) %>
-  <p>
-    <%= link_to spot_favorites_path(@spot), method: :delete do %>
-    ♥<%= @spot.favorites.count %>
-    <% end %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to spot_favorites_path(@spot), method: :post do %>
-    ♡<%= @spot.favorites.count %>
-<% end %>
-  </p>
-<% end %>
-<h2>コメント一覧</h2>
-<p>コメント件数：<%= @spot.spot_comments.count %></p>
-<% @spot_comments.each do |spot_comment| %>
-  <%= spot_comment.user.age %>
-  <%= spot_comment.user.name %>
-  <%= spot_comment.created_at.strftime('%Y/%m/%d') %>
-  <%= spot_comment.comment %>
-  <% if spot_comment.user == current_user %>
-  <div>
-    <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="text-center">スポット詳細</h2>
+      <div class="card">
+        <img class="card-img-top"><%= attachment_image_tag @spot, :image, fallback: "no_image.jpg",size: '120x120' %><img>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= @spot.name %>
+          </h4>
+          <p class="card-text">
+            <%= @spot.description %>
+          </p>
+          <a>
+            <% if @spot.favorited_by?(current_user) %>
+            <p>
+              <%= link_to spot_favorites_path(@spot), method: :delete do %>
+              ♥<%= @spot.favorites.count %>
+              <% end %>
+            </p>
+            <% else %>
+            <p>
+               <%= link_to spot_favorites_path(@spot), method: :post do %>
+               ♡<%= @spot.favorites.count %>
+               <% end %>
+            </p>
+            <% end %>
+          </a>
+        </div>
+       </div>
+    </div>
+    <div class="col-6">
+      <h2>コメントを投稿</h2>
+      <div class="field">
+      <%= form_with(model:[@spot, @spot_comment], local: true) do |f| %>
+        <%= f.text_area :comment, placeholder: "コメント、感想などをここに" ,size: "18x11", class: "form-control" %>
+        <p id="spot1"><%= f.submit "投稿する",class:"btn btn-success" %></p>
+      <% end %>
+      </div>
+    </div>
   </div>
-  <% end %>
-<% end %>
-<%= paginate @spot_comments %>
-<div class="new-comment">
-<%= form_with(model:[@spot, @spot_comment], local: true) do |f| %>
-  <%= f.text_area :comment, placeholder: "コメントをここに" %>
-  <%= f.submit "送信する" %>
-<% end %>
 </div>
+<div class="album">
+  <div class="container">
+  <div class="row">
+    <h3 class="text-center">コメント一覧</h3>
+    コメント件数：<%= @spot.spot_comments.count %>
+    <% @spot_comments.each do |spot_comment| %>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= spot_comment.user.age %>
+            <%= spot_comment.user.name %>
+          </h4>
+          <p class="card-text">
+            <%= spot_comment.comment %>
+          </p>
+          <% if spot_comment.user == current_user %>
+            <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+<%= paginate @spot_comments %>

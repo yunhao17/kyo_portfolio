@@ -10,7 +10,7 @@ class Public::SpotCommentsController < ApplicationController
 
   def destroy
     SpotComment.find_by(id: params[:id], spot_id: params[:spot_id]).destroy
-    redirect_to spot_path(params[:spot_id])
+    redirect_to request.referer
   end
 
   private

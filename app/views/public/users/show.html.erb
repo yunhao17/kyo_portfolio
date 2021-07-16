@@ -1,41 +1,33 @@
-<div class="container px-5 px-sm-0">
-  <div calss="row">
-    <div class="col-lg-3">
-      <h2>User info</h2>
-      <table>
-        <tbody>
-          <tr>
-            <th>年代</th>
-            <th><%= @user.age %></th>
-          </tr>
-          <tr>
-            <th>名前</th>
-            <th><%= @user.name %></th>
-           </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-lg-8 offset-md-1">
-      <h2>コメント一覧</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>スポット名</th>
-            <th>コメント</th>
-          </tr>
-        </thead>
+<div class="container">
+  <div class="row">
+      <div class="col-4">
+        <h3>ようこそ!　<%= @user.name %>さん</h3>
+        <p><%= link_to "編集する",edit_user_path(@user.id),class: 'btn btn-success' %></p>
+      </div>
+  </div>
+</div>
+<h2 class="text-center">投稿したコメント一覧</h2>
+  <div class="album">
+    <div class="container">
+      <div class="row">
         <% @spot_comments.each do |spot_comment| %>
-        <tbody>
-          <tr>
-            <td>
+        <div class="col-md-4">
+          <div class="card md-4" style="weight: 300px; height: 250px">
+            <div class="card-title">
               <%= link_to spot_path(spot_comment.spot.id) do %>
               <%= spot_comment.spot.name %>
               <% end %>
-            <td><%= spot_comment.comment %></td>
-          </tr>
-        </tbody>
+            </div>
+            <div class="card-body">
+              <%= spot_comment.comment %>
+              <% if spot_comment.user == current_user %>
+              <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete %>
+              <% end %>
+            </div>
+          </div>
+        </div>
         <% end %>
-        <%= paginate @spot_comments %>
+      </div>
     </div>
   </div>
-</div>
+  <%= paginate @spot_comments %>
