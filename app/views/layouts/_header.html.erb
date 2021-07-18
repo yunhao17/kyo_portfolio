@@ -6,7 +6,7 @@
     <li class="nav-list"><%= link_to "マイページ",user_path(current_user) %></li>
     <li class="nav-list"><%= link_to "エリアで探す",areas_path %></li>
     <li class="nav-list"><%= link_to "目的で探す",purposes_path %></li>
-    <li class="nav-list"><%= link_to "ユーザー一覧",users_path %></li>
+    <!--<li class="nav-list"><%#= link_to "ユーザー一覧",users_path %></li>-->
     <li class="nav-list"><%= link_to "ログアウト",destroy_user_session_path , method: :delete %></li>
 <% elsif admin_signed_in? %>
     <li class="nav-list"><a href="/">ホーム</a></li>
