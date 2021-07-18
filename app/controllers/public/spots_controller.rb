@@ -12,6 +12,7 @@ class Public::SpotsController < ApplicationController
   def eria_mokuteki
     if params[:sort] == "favo"
       @spots = Spot.where(area_id: params[:area_id] ,purpose_id: params[:purpose_id]).page(params[:page]).per(5).sort{|a,b| b.favorited_users.count <=> a.favorited_users.count}
+      # @spots = @spots.page(params[:page]).per(5)
     else
       @spots = Spot.where(area_id: params[:area_id] ,purpose_id: params[:purpose_id]).page(params[:page]).per(5)
     end
