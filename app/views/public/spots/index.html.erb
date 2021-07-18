@@ -7,36 +7,42 @@
     url = mokuteki_path(:sort => "favo")
   end
 %>
-<%= link_to "いいね順に並び替え", url %>
-<h1>スポット一覧</h1>
-<table>
-  <thead>
-    <tr>
-      <th>エリア名</th>
-      <th>目的</th>
-      <th>スポット画像</th>
-      <th>スポット名</th>
-      <th>スポット説明</th>
-      <th>いいね数</th>
-      <th>コメント件数</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @spots.each do |spot| %>
-    <tr>
-      <th><%= spot.area.name %></th>
-      <th><%= spot.purpose.name %></th>
-      <th><%= attachment_image_tag spot, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
-      <th>
-        <%= link_to spot_path(spot.id) do%>
-        <%= spot.name %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">スポット一覧</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>エリア名</th>
+            <th>目的</th>
+            <th>スポット画像</th>
+            <th>スポット名</th>
+            <th>スポット説明</th>
+            <th>いいね数</th>
+            <th>コメント件数</th>
+          </tr>
+        </thead>
+        <% @spots.each do |spot| %>
+        <tbody>
+          <tr>
+            <th><%= spot.area.name %></th>
+            <th><%= spot.purpose.name %></th>
+            <th><%= attachment_image_tag spot, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
+            <th>
+              <%= link_to spot_path(spot.id) do%>
+              <%= spot.name %>
+              <% end %>
+            </th>
+            <th><%= spot.description %></th>
+            <th><%= spot.favorites.count %></th>
+            <th><%= spot.spot_comments.count %></th>
+          </tr>
+        </tbody>
         <% end %>
-      </th>
-      <th><%= spot.description %></th>
-      <th><%= spot.favorites.count %></th>
-      <th><%= spot.spot_comments.count %></th>
-    </tr>
-    <% end %>
-    <%= paginate @spots %>
-  </tbody>
-</table>
+      </table>
+    </div>
+  </div>
+</div>
+<%= paginate @spots %>
