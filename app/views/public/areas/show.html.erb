@@ -1,24 +1,47 @@
-<h2>エリア詳細</h2>
-<%= attachment_image_tag @area, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
-<%= @area.name %>
-<%= @area.description %>
-<h2>目的</h2>
-<table>
-  <thead>
-    <tr>
-      <th>目的名</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @purposes.each do |purpose| %>
-    <tr>
-      <th>
-        <%= link_to eria_purpose_path(@area.id, purpose.id) do %>
-        <%= purpose.name %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="text-center">エリア詳細</h2>
+      <div class="card">
+        <img class="card-img-top"><%= attachment_image_tag @area, :image, fallback: "no_image.jpg",size: '120x120' %><img>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= @area.name %>
+          </h4>
+          <p class="card-text">
+            <%= @area.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <!--</div>-->
+
+    <!--<div class="album">-->
+  <!--<div class="container">-->
+  <!--  <div class="row">-->
+
+    <div class="col-6">
+      <h2 class="text-center">目的</h2>
+      <div class="album">
+        <% @purposes.each do |purpose| %>
+        <div class="card">
+          <div class="card-imag-top text-center">
+            <%#= attachment_image_tag purpose, :image, fallback: "no_image.jpg", size: '200x150' %>
+          </div>
+          <div class="card-body">
+            <p class="text-center">
+              <%= link_to eria_purpose_path(@area.id, purpose.id) do %>
+              <%= purpose.name %>
+              <% end %>
+            </p>
+          </div>
+        </div>
         <% end %>
-        </th>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+
+  <!--  </div>-->
+  <!--</div>-->
+    <!--</div>-->
+ </div>
+</div>
