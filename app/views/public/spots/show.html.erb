@@ -3,7 +3,7 @@
     <div class="col-6">
       <h2 class="text-center">スポット詳細</h2>
       <div class="card">
-        <img class="card-img-top"><%= attachment_image_tag @spot, :image, fallback: "no_image.jpg",size: '120x120' %><img>
+        <img class="card-img-top"><%= attachment_image_tag @spot, :image, fallback: "no_image.jpg",size: '130x130' %><img>
         <div class="card-body">
           <h4 class="card-title">
             <%= @spot.name %>
@@ -11,21 +11,9 @@
           <p class="card-text">
             <%= @spot.description %>
           </p>
-          <a>
-            <% if @spot.favorited_by?(current_user) %>
-            <p>
-              <%= link_to spot_favorites_path(@spot), method: :delete do %>
-              ♥<%= @spot.favorites.count %>
-              <% end %>
-            </p>
-            <% else %>
-            <p>
-               <%= link_to spot_favorites_path(@spot), method: :post do %>
-               ♡<%= @spot.favorites.count %>
-               <% end %>
-            </p>
-            <% end %>
-          </a>
+          <div id="favorite">
+            <%= render 'public/favorites/favorite',spot: @spot %>
+          </div>
         </div>
        </div>
     </div>
