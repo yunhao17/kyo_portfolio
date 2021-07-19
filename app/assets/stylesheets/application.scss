@@ -52,7 +52,6 @@ header {
  }
 
 .nav {
-  text-align: center;
   padding: 10px 0;
   margin: 0 auto;
 }
@@ -127,6 +126,14 @@ body{
 
 #spot1 {
   padding: 10px 0px 0px;
+  text-align: right;
+}
+
+#center {
+  text-align: center;
+}
+
+.iine {
   text-align: right;
 }
 

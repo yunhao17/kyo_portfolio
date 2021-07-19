@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h2 class="text-center">スポット詳細</h2>
+      <h2 id="center">スポット詳細</h2>
       <div class="card">
         <img class="card-img-top"><%= attachment_image_tag @spot, :image, fallback: "no_image.jpg",size: '130x130' %><img>
         <div class="card-body">
@@ -18,7 +18,7 @@
        </div>
     </div>
     <div class="col-6">
-      <h2>コメントを投稿</h2>
+      <h2 id="center">コメントを投稿</h2>
       <div class="field">
       <%= form_with(model:[@spot, @spot_comment], local: true) do |f| %>
         <%= f.text_area :comment, placeholder: "コメント、感想などをここに" ,size: "18x11", class: "form-control" %>
@@ -32,7 +32,7 @@
   <div class="container">
   <div class="row">
     <h3 class="text-center">コメント一覧</h3>
-    コメント件数：<%= @spot.spot_comments.count %>
+    <p>コメント件数：<%= @spot.spot_comments.count %></p>
     <% @spot_comments.each do |spot_comment| %>
     <div class="col-12">
       <div class="card">

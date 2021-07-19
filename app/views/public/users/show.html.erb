@@ -7,12 +7,12 @@
   </div>
 </div>
 <h2 class="text-center">投稿したコメント一覧</h2>
-  <div class="album">
+  <div class="album" id="center">
     <div class="container">
       <div class="row">
         <% @spot_comments.each do |spot_comment| %>
         <div class="col-md-4">
-          <div class="card md-4" style="weight: 300px; height: 250px">
+          <div class="card md-4" style="weight: 300px; height: 300px">
             <div class="card-title">
               <%= link_to spot_path(spot_comment.spot.id) do %>
               <%= spot_comment.spot.name %>

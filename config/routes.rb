@@ -28,5 +28,9 @@ Rails.application.routes.draw do
     end
     get '/spots/:area_id/eria/:purpose_id', to: 'spots#eria_mokuteki', as: 'eria_purpose'
     get '/spots/mokuteki/:purpose_id', to: 'spots#mokuteki', as: 'mokuteki'
+    
+    get "search" => "searches#search"
   end
+  
+  
 end
