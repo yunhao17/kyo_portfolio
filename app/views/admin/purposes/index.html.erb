@@ -1,24 +1,32 @@
-<h1>目的一覧</h1>
-<%= form_with model: @purpose,url: admin_purposes_path(@purpose), local:true do |f| %>
 <div>
-  <%= f.label :name, "目的名" %>
-  <%= f.text_field :name %>
-  <%= f.submit "追加" %>
-</div>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>目的名</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+  <h1>目的一覧</h1>
+  <%= form_with model: @purpose,url: admin_purposes_path(@purpose), local:true do |f| %>
+  <div>
+    <%= f.label :image_id, "目的画像" %>
+    <%= f.attachment_field :image %>
+  </div>
+  <div>
+    <%= f.label :name, "目的名" %>
+    <%= f.text_field :name %>
+  </div>
+    <%= f.submit "追加" %>
+  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>目的画像</th>
+        <th>目的名</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
     <% @purposes.each do |purpose| %>
-    <tr>
-      <th><%= purpose.name %></th>
-      <th><%= link_to "削除",admin_purpose_path(purpose.id), method: :delete %></th>
-    </tr>
+      <tr>
+        <th><%= attachment_image_tag purpose, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
+        <th><%= purpose.name %></th>
+        <th><%= link_to "削除",admin_purpose_path(purpose.id), method: :delete %></th>
+      </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
