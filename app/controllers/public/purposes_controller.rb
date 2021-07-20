@@ -1,5 +1,7 @@
 class Public::PurposesController < ApplicationController
   
+  before_action :authenticate_user!
+  
   def index
     @purposes = Purpose.all
   end
