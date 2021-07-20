@@ -8,4 +8,9 @@ class User < ApplicationRecord
   has_many :spot_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorited_spots, through: :favorites, source: :spot
+  
+  
+  validates :name, uniqueness: true
+  validates :age, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 end
