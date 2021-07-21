@@ -9,7 +9,7 @@ class Public::PurposesController < ApplicationController
   private
 
   def purpose_params
-    params.require(:purpose).permit(:name)
+    params.require(:purpose).permit(:name, :image)
   end
 
 end

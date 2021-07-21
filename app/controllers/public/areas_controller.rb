@@ -1,5 +1,5 @@
 class Public::AreasController < ApplicationController
-  
+
   before_action :authenticate_user!
 
   def index
@@ -14,7 +14,7 @@ class Public::AreasController < ApplicationController
   private
 
   def area_params
-    params.require(:area).permit(:name, :description, :image_id)
+    params.require(:area).permit(:name, :description, :image)
   end
 
 end
