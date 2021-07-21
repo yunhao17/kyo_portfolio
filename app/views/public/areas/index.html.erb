@@ -12,7 +12,9 @@
           </div>
           <div class="card-body">
             <p class="card-text-center">
+              <%= link_to area_path(area.id) do %>
               <%= area.name %>
+              <% end %>
             </p>
           </div>
         </div>

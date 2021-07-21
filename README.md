@@ -43,4 +43,5 @@ https://docs.google.com/spreadsheets/d/1FzGrir6nq1U9pgIYlrOq72778-150uIsmgxTYRug
  - https://sozai-good.com/
  - https://fontfree.me/
  - https://www.irasutoya.com/
+ - https://o-dan.net/ja/
 使用した場合記述します。

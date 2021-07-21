@@ -3,7 +3,9 @@
     <div class="col-6">
       <h2>エリア詳細</h2>
       <div class="card">
-        <img class="card-img-top"><%= attachment_image_tag @area, :image, fallback: "no_image.jpg",size: '120x120' %><img>
+        <div class="card-img-top text-center">
+          <%= attachment_image_tag @area, :image, fallback: "no_image.jpg",size: '200x150' %>
+        </div>
         <div class="card-body">
           <h4 class="card-title">
             <%= @area.name %>
@@ -20,7 +22,7 @@
         <% @purposes.each do |purpose| %>
         <div class="card">
           <div class="card-imag-top text-center">
-            <%#= attachment_image_tag purpose, :image, fallback: "no_image.jpg", size: '200x150' %>
+            <%= attachment_image_tag purpose, :image, fallback: "no_image.jpg", size: '200x150' %>
           </div>
           <div class="card-body">
             <p class="text-center">

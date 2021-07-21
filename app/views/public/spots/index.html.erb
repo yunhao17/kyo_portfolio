@@ -11,14 +11,13 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1 id="center">スポット一覧</h1>
+      <h1 id="center">場所一覧</h1>
       <div class="iine"><%= link_to "いいねが多い順",url %></div>
       <table class="table" id="center">
         <thead>
           <tr>
             <th>エリア名</th>
             <th>目的</th>
-            <th>画像</th>
             <th>場所名</th>
             <th>説明</th>
             <th>いいね数</th>
@@ -30,7 +29,6 @@
           <tr>
             <th><%= spot.area.name %></th>
             <th><%= spot.purpose.name %></th>
-            <th><%= attachment_image_tag spot, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
             <th>
               <%= link_to spot_path(spot.id) do%>
               <%= spot.name %>
