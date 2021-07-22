@@ -1,11 +1,15 @@
 <div class="container">
+  <h2 id="center">エリア詳細</h2>
   <div class="row" id="center">
-    <div class="col-6">
-      <h2>エリア詳細</h2>
-      <div class="card">
-        <div class="card-img-top text-center">
-          <%= attachment_image_tag @area, :image, fallback: "no_image.jpg",size: '200x150' %>
-        </div>
+    <div class="col">
+      <div class="card h-100">
+          <div class="card-img-top text-center">
+            <%= attachment_image_tag @area, :image, fallback: "no_image.jpg",size: '300x200' %>
+          </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
         <div class="card-body">
           <h4 class="card-title">
             <%= @area.name %>
@@ -16,10 +20,11 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
-      <h2 class="text-center">目的</h2>
-      <div class="album">
-        <% @purposes.each do |purpose| %>
+  </div>
+  <h2 class="text-center pt-3 pb-3">目的</h2>
+  <div class="row">
+    <% @purposes.each do |purpose| %>
+      <div class="col">
         <div class="card">
           <div class="card-imag-top text-center">
             <%= attachment_image_tag purpose, :image, fallback: "no_image.jpg", size: '200x150' %>
@@ -32,8 +37,7 @@
             </p>
           </div>
         </div>
-        <% end %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
