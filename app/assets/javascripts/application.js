@@ -19,7 +19,7 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
-
+document.addEventListener("turbolinks:load", function () {
 $(document).ready(function () {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
@@ -42,5 +42,6 @@ $(document).ready(function () {
     keyboardOnAlways : true,
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
     hidePrevious : false
-  });
+  　});
+　});
 });
