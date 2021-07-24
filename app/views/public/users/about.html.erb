@@ -1,3 +1,4 @@
+ <h2 class="about pb-3 text-center">京都観光情報サイト</h2>
   <div id="container">
     <div id="theTarget">
       <div class="image1"></div>
@@ -5,5 +6,25 @@
       <div class="image3"></div>
       <div class="image4"></div>
       <div class="image5"></div>
+    </div>
+  </div>
+  
+  <div class="about pt-5">
+      <h4 id="center">
+      京都観光のおすすめスポットを日本語と中国語で紹介し、国内外に向けて情報を発信します。<br>
+      気になるスポットをお気に入りすることや、実際に訪れた人の感想を投稿することができます。
+      </h4>
+  </div>
+  
+  <div class="container pt-5">
+    <div class="row">
+      <span class="about1">
+        新規登録の方は
+        <%= link_to "こちら",new_user_registration_path,class:"link" %>
+      </span>
+      <span class="about1">
+        ログインは
+        <%= link_to "こちら",new_user_session_path,class:"link" %>
+      </span>
     </div>
   </div>
