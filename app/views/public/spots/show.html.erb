@@ -21,7 +21,7 @@
       <h2 id="center">コメントを投稿</h2>
         <div class="field">
         <%= form_with(model:[@spot, @spot_comment], local: true) do |f| %>
-          <%= f.text_area :comment, placeholder: "コメント、感想などをここに" ,size: "18x11", class: "form-control" %>
+          <%= f.text_area :comment, placeholder: "コメント、感想などをここに（空欄は投稿できません）" ,size: "18x11", class: "form-control" %>
           <p id="spot1"><%= f.submit "投稿する",class:"btn btn-success" %></p>
         <% end %>
         </div>

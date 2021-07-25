@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :favorited_spots, through: :favorites, source: :spot
   
   
-  validates :name, uniqueness: true
-  validates :age, uniqueness: true
+  validates :name, presence: true
+  validates :age, presence: true
   validates :email, presence: true, uniqueness: true
 end

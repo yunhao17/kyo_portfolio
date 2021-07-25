@@ -17,18 +17,20 @@
 /*フォント*/
 @font-face {
   font-family: “ai”;
-  src: url('/assets/AiharaHudemojiKaisho3.00') format("truetype");
+  src: url("AiharaHudemojiKaisho3.00.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: “bi”;
-  src: url('/assets/001Shirokuma-Regular') format("truetype");
+  src: url('001Shirokuma-Regular.otf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-
+h1,h2,h3 {
+  font-family: “bi”;
+}
 
 /*基本*/
  html {
@@ -69,7 +71,7 @@ header {
   margin: 20px;
   padding-top: 25px;
  }
- 
+
 
 /*フッター*/
 
