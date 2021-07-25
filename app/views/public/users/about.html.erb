@@ -15,7 +15,8 @@
       気になるスポットをお気に入りすることや、実際に訪れた人の感想を投稿することができます。
       </h4>
   </div>
-  
+  <% if user_signed_in? %>
+  <% else %>
   <div class="container pt-3">
     <div class="row">
       <span class="about1">
@@ -28,3 +29,4 @@
       </span>
     </div>
   </div>
+  <% end %>

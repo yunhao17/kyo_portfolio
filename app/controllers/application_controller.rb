@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
    when Admin
     admin_areas_path
    when User
-    root_path
+    about_path
    end
   end
   
