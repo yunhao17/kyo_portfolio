@@ -1,6 +1,6 @@
 <div class="search-form">
   <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword, placeholder: "場所名で探す",style:"border: none; background-color: white; color: #ee827c;" %>
+    <%= f.text_field :keyword, value: @keyword, placeholder: "🔎",style:"border: none; color: #ee827c;" %>
     <%= f.submit "探す",style:"border: none; background-color: white; color: #ee827c;" %>
   <% end %>
 </div>

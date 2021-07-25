@@ -3,9 +3,12 @@
   <div class="top2"><%= link_to "アバウト",about_path,class:"link",style:"color: #c7a5cc;" %></div>
   <div class="top2"><%= link_to "ログイン",new_user_session_path,class:"link",style:"color: #c7a5cc;" %></div>
 </div>
+<% if user_signed_in? %>
+<% else %>
 <div class="top1">
   <p>
     新規登録の方は
     <%= link_to "こちら",new_user_registration_path,class:"link" %>
   </p>
 </div>
+<% end %>
