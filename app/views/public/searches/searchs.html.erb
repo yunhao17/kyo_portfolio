@@ -8,7 +8,6 @@
             <th>エリア名</th>
             <th>目的</th>
             <th>場所名</th>
-            <th>説明</th>
             <th>いいね数</th>
             <th>コメント件数</th>
           </tr>
@@ -18,12 +17,11 @@
           <tr id="center">
             <th><%= spot.area.name %></th>
             <th><%= spot.purpose.name %></th>
-            <th>
-              <%= link_to spot_path(spot.id) do%>
+            <th id="font">
+              <%= link_to spot_path(spot.id) do %>
               <%= spot.name %>
               <% end %>
             </th>
-            <th><%= spot.description %></th>
             <th><%= spot.favorites.count %></th>
             <th><%= spot.spot_comments.count %></th>
           </tr>
