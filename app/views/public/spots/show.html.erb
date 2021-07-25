@@ -5,7 +5,7 @@
       <div class="card">
         <img class="card-img-top"><%= attachment_image_tag @spot, :image, fallback: "no_image.jpg",size: '200x150' %><img>
         <div class="card-body">
-          <h4 class="card-title">
+          <h4 class="card-title" id="font">
             <%= @spot.name %>
           </h4>
           <p class="card-text">

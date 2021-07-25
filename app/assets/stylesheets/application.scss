@@ -28,8 +28,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: “ci”;
+  src: font-url("timemachine-wa.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1,h2,h3 {
   font-family: “bi”;
+}
+
+#font {
+  font-family: “ci”;
+  font-size: 20px;
 }
 
 /*基本*/
@@ -72,6 +84,11 @@ header {
   padding-top: 25px;
  }
 
+#searche {
+  font-size: 17px;
+  margin: 20px;
+  padding-top: 25px;
+}
 
 /*フッター*/
 

@@ -9,8 +9,8 @@
             <%= attachment_image_tag purpose, :image, fallback: "no_image.jpg", size: '200x150' %>
           </div>
           <div class="card-body">
-            <p class="text-center">
-              <%= link_to mokuteki_path(purpose.id) do %>
+            <p class="text-center" id="font">
+              <%= link_to mokuteki_path(purpose.id) ,style:"color: #00a1e9;" do %>
               <%= purpose.name %>
               <% end %>
             </p>

@@ -7,11 +7,11 @@
           <%= image_tag 'logo.jpg', size: '80x80' %>
          </a>
       </li>
-      <li class="nav-list"><%= link_to "マイページ",user_path(current_user) %></li>
-      <li class="nav-list"><%= link_to "エリアで探す",areas_path %></li>
-      <li class="nav-list"><%= link_to "目的で探す",purposes_path %></li>
-      <li class="nav-list"><%= link_to "ログアウト",destroy_user_session_path , method: :delete %></li>
-      <li class="nav-list"><%= render 'public/searches/searche', search: @search %></li>
+      <li class="nav-list"><%= link_to "マイページ",user_path(current_user) ,style:"color: #ee827c;" %></li>
+      <li class="nav-list"><%= link_to "エリアで探す",areas_path ,style:"color: #ee827c;" %></li>
+      <li class="nav-list"><%= link_to "目的で探す",purposes_path ,style:"color: #ee827c;" %></li>
+      <li class="nav-list"><%= link_to "ログアウト",destroy_user_session_path , method: :delete ,style:"color: #ee827c;" %></li>
+      <li id="searche"><%= render 'public/searches/searche', search: @search %></li>
 <% elsif admin_signed_in? %>
       <li class="log">
         <a href="/">
