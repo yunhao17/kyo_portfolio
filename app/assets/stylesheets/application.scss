@@ -17,13 +17,13 @@
 /*フォント*/
 @font-face {
   font-family: “ai”;
-  src: url("AiharaHudemojiKaisho3.00.ttf") format("truetype");
+  src: url('/assets/AiharaHudemojiKaisho3.00') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: “bi”;
-  src: url('001Shirokuma-Regular.otf') format("truetype");
+  src: url('/assets/001Shirokuma-Regular') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
