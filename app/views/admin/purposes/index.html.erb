@@ -1,4 +1,4 @@
-<div>
+<div class="admin">
   <h1>目的一覧</h1>
   <%= form_with model: @purpose,url: admin_purposes_path(@purpose), local:true do |f| %>
   <div>
@@ -9,24 +9,24 @@
     <%= f.label :name, "目的名" %>
     <%= f.text_field :name %>
   </div>
-    <h2><%= f.submit "追加" %>
+    <%= f.submit "追加" %>
   <% end %>
-  <table>
-    <thead>
-      <tr>
-        <th>目的画像</th>
-        <th>目的名</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @purposes.each do |purpose| %>
-      <tr>
-        <th><%= attachment_image_tag purpose, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
-        <th><%= purpose.name %></th>
-        <th><%= link_to "削除",admin_purpose_path(purpose.id), method: :delete %></th>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+    <table class="admin">
+      <thead>
+        <tr>
+          <th>目的画像</th>
+          <th>目的名</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @purposes.each do |purpose| %>
+        <tr>
+          <th><%= attachment_image_tag purpose, :image, :fill, 50, 50, fallback: "no_image.jpg" %></th>
+          <th><%= purpose.name %></th>
+          <th><%= link_to "削除",admin_purpose_path(purpose.id), method: :delete %></th>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 </div>

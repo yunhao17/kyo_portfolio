@@ -1,29 +1,33 @@
-<h1>スポット編集</h1>
-<%= form_with model: @spot, url: admin_spot_path(@spot.id), local:true do |f| %>
- <div>
-  <%= f.label :area_id, "エリア" %>
-  <%= f.collection_select :area_id, @areas, :id, :name, prompt: "選択して下さい" %>
- </div>
- <div>
-  <%= f.label :purpose_id, "目的" %>
-  <%= f.collection_select :purpose_id, @purposes, :id, :name, prompt: "選択して下さい" %>
- </div>
- <div>
-  <%= f.label :image_id, "スポット画像" %>
-  <%= f.attachment_field :image %>
- </div>
- <div>
-  <%= f.label :name, "スポット名" %>
-  <%= f.text_field :name %>
- </div>
- <div>
-  <%= f.label :description, "スポット説明" %>
-  <%= f.text_area :description %>
- </div>
- <div>
-  <%= f.submit "変更" %>
- </div>
-<% end %>
-<div>
-  <%= link_to '戻る',admin_spots_path %>
+<div class="row">
+  <div class="col-md-12 text-center">
+      <h1>スポット編集</h1>
+      <%= form_with model: @spot, url: admin_spot_path(@spot.id), local:true do |f| %>
+      <div class="field form-group col-xs-12">
+        <%= f.label :area_id, "エリア" %>
+        <%= f.collection_select :area_id, @areas, :id, :name, prompt: "選択して下さい" %>
+      </div>
+      <div class="field form-group col-xs-12">
+        <%= f.label :purpose_id, "目的" %>
+        <%= f.collection_select :purpose_id, @purposes, :id, :name, prompt: "選択して下さい" %>
+      </div>
+      <div class="field form-group col-xs-12">
+        <%= f.label :image_id, "スポット画像" %>
+        <%= f.attachment_field :image %>
+      </div>
+      <div class="field form-group col-xs-12">
+        <%= f.label :name, "スポット名" %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field form-group col-xs-12">
+        <%= f.label :description, "スポット説明" %>
+        <%= f.text_area :description ,size: "4x8", class: "form-control" %>
+      </div>
+      <div class="field form-group col-xs-12">
+        <%= f.submit "変更" %>
+      </div>
+      <% end %>
+      <div class="field form-group col-xs-12">
+        <%= link_to '戻る',admin_spots_path %>
+      </div>
+  </div>
 </div>
