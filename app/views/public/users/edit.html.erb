@@ -11,10 +11,10 @@
         <%= f.text_field :name, autofocus: true %>
       </div>
       <div class="field form-group col-xs-12">
-      <%= f.submit "更新" %>
+      <%= f.submit "更新" ,class:"btn btn-success" %>
       </div>
       <div class="field form-group col-xs-12">
-        <%= link_to '戻る',users_path %>
+        <%= link_to '戻る',user_path(@user.id) %>
       </div>
       <% end %>
   </div>

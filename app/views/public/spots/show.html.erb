@@ -44,7 +44,7 @@
             <%= spot_comment.comment %>
           </p>
           <% if spot_comment.user == current_user %>
-            <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete %>
+            <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete , style:"color: red;" %>
           <% end %>
         </div>
       </div>
