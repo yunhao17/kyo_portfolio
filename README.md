@@ -26,6 +26,11 @@
 旅行前にプランを立てる時。
 旅行後に感想を投稿し旅の思い出を共有したいと思った時。
 
+## 設計書
+
+- <a href="https://drive.google.com/file/d/10QH9wl6TNLbucgDO5rk22LiULuxUDmGE/view?usp=sharing">ER図</a>
+- <a href="https://docs.google.com/spreadsheets/d/1LGyqiUdy_LzTOEHVpiBb6qPqX23aAgwm/edit#gid=1632408800">テーブル定義書</a>
+
 ## チャレンジ要素一覧
 
 https://docs.google.com/spreadsheets/d/1FzGrir6nq1U9pgIYlrOq72778-150uIsmgxTYRugJMw/edit#gid=2122164854
@@ -45,4 +50,3 @@ https://docs.google.com/spreadsheets/d/1FzGrir6nq1U9pgIYlrOq72778-150uIsmgxTYRug
  - https://o-dan.net/ja/
  - https://www.designevo.com/
  - https://www.pakutaso.com/
-使用した場合記述します。
