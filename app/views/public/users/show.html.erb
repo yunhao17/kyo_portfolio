@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
       <div class="col-4">
-        <h2>ようこそ!　<%= @user.name %>さん</h2>
+        <h2>ようこそ!<br><%= @user.name %>さん</h2>
         <% if @user == current_user %>
         <p><%= link_to "編集する",edit_user_path(@user.id),class: 'btn btn-success' %></p>
         <% end %>
