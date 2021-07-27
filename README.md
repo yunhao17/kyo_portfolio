@@ -50,3 +50,5 @@ https://docs.google.com/spreadsheets/d/1FzGrir6nq1U9pgIYlrOq72778-150uIsmgxTYRug
  - https://o-dan.net/ja/
  - https://www.designevo.com/
  - https://www.pakutaso.com/
+
+##今後スポットを追加していこうと思います。
