@@ -13,10 +13,10 @@ class Spot < ApplicationRecord
   belongs_to :user,optional: true
 
   attachment :image
-  
+
   #検索機能
   def self.search(keyword)
-    where(["name like?", "%#{keyword}%"])
+    @search_spots = Spot.where("name like? OR description like?", "%#{keyword}%", "%#{keyword}%")
   end
 
 end
