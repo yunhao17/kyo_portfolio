@@ -4,7 +4,7 @@ class Public::SpotsController < ApplicationController
 
   def index
     if params[:sort] == "favo"
-      # n + 1 問題が発生しているので可能であれば改善してみる
+      # n + 1 問題が発生している今後改善してみる
       @spots = Spot.all.sort{|a,b| b.favorited_users.count <=> a.favorited_users.count}
       @spots = Kaminari.paginate_array(@spots).page(params[:page]).per(5)
     else
