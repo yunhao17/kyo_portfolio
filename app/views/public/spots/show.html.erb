@@ -30,27 +30,27 @@
 </div>
 <div class="album pt-3">
   <div class="container">
-  <div class="row">
-    <h2 class="text-center">コメント一覧</h2>
-    <% @spot_comments.each do |spot_comment| %>
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">
-            <%= spot_comment.user.age %>
-            <%= spot_comment.user.name %>
-          </h4>
-          <p class="card-text">
-            <%= spot_comment.comment %>
-          </p>
-          <% if spot_comment.user == current_user %>
-            <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete , style:"color: red;" %>
-          <% end %>
+    <div class="row">
+      <h2 class="text-center">コメント一覧</h2>
+      <% @spot_comments.each do |spot_comment| %>
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">
+              <%= spot_comment.user.age %>
+              <%= spot_comment.user.name %>
+            </h4>
+            <p class="card-text">
+              <%= spot_comment.comment %>
+            </p>
+            <% if spot_comment.user == current_user %>
+              <%= link_to "削除", spot_spot_comment_path(spot_comment.spot, spot_comment), method: :delete , style:"color: red;" %>
+            <% end %>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
-  </div>
   </div>
 </div>
 <%= paginate @spot_comments %>
