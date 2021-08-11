@@ -1,7 +1,7 @@
 class Public::SpotCommentsController < ApplicationController
 
   before_action :authenticate_user!
-  
+
   def create
     @spot = Spot.find(params[:spot_id])
     @spot_comment = current_user.spot_comments.new(spot_comment_params)
