@@ -18,7 +18,6 @@ class Admin::PurposesController < ApplicationController
     redirect_to admin_purposes_path
   end
 
-
   private
 
   def purpose_params
