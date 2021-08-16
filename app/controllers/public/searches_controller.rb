@@ -7,5 +7,4 @@ class Public::SearchesController < ApplicationController
     @keyword = params[:keyword]
     render 'searchs'
   end
-
 end
