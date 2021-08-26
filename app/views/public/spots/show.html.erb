@@ -3,7 +3,7 @@
     <div class="col-6">
       <h2 id="center">スポット詳細</h2>
       <div class="card">
-        <img class="card-img-top"><%= attachment_image_tag @spot, :image, fallback: "no_image.jpg",size: '200x150' %><img>
+        <img class="card-img-top"><%= attachment_image_tag @spot, :image, fallback: "no_image.jpg",width: '100%' %><img>
         <div class="card-body">
           <h4 class="card-title" id="font">
             <%= @spot.name %>
